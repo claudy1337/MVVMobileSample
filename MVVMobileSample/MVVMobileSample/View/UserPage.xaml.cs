@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVMobileSample.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,16 @@ namespace MVVMobileSample.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserPage : ContentPage
     {
+        private UserViewModel userViewModel;
+
         public UserPage()
         {
             InitializeComponent();
+        }
+
+        public UserPage(UserViewModel userViewModel)
+        {
+            this.userViewModel = userViewModel;
         }
     }
 }
