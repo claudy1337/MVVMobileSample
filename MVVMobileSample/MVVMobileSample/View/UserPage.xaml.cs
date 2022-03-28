@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,16 +12,12 @@ namespace MVVMobileSample.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UserPage : ContentPage
     {
-        private UserViewModel userViewModel;
-
-        public UserPage()
+        public UserViewModel ViewModel { get; private set; }
+        public UserPage(UserViewModel vm)
         {
             InitializeComponent();
-        }
-
-        public UserPage(UserViewModel userViewModel)
-        {
-            this.userViewModel = userViewModel;
+            ViewModel = vm;
+            this.BindingContext = ViewModel;
         }
     }
 }

@@ -1,6 +1,10 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MVVMobileSample.ViewModel;
+using MVVMobileSample.View;
+using MVVMobileSample.Model;
+
 
 namespace MVVMobileSample
 {
@@ -9,8 +13,7 @@ namespace MVVMobileSample
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new PageListUser());
         }
 
         protected override void OnStart()

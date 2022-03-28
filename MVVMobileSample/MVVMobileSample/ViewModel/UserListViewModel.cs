@@ -9,7 +9,7 @@ using MVVMobileSample.View;
 
 namespace MVVMobileSample.ViewModel
 {
-    internal class UserListViewModel : INotifyPropertyChanged
+    public class UserListViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<UserViewModel> Users { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -43,7 +43,7 @@ namespace MVVMobileSample.ViewModel
                     UserViewModel tempFriend = value;
                     selectedUser = null;
                     OnPropertyChanged("SelectedFriend");
-                    Navigation.PushAsync(new UserPage(tempFriend));
+                    Navigation.PushAsync(new PageUser(tempFriend));
                 }
             }
         }
@@ -55,7 +55,7 @@ namespace MVVMobileSample.ViewModel
 
         private void CreateUser()
         {
-            Navigation.PushAsync(new UserPage(new UserViewModel() { ListViewModel = this }));
+            Navigation.PushAsync(new PageUser(new UserViewModel() { ListViewModel = this }));
         }
         private void Back()
         {

@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MVVMobileSample.Model;
-using MVVMobileSample.View;
 using MVVMobileSample.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MVVMobileSample.View
+namespace MVVMobileSample
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UserLIstPage : ContentPage
+    public partial class PageUser : ContentPage
     {
-        public UserLIstPage()
+        public UserViewModel ViewModel { get; private set; }
+        public PageUser(UserViewModel vm)
         {
             InitializeComponent();
-           
+            ViewModel = vm;
+            this.BindingContext = ViewModel;
         }
     }
 }

@@ -6,7 +6,7 @@ using MVVMobileSample.Model;
 
 namespace MVVMobileSample.ViewModel
 {
-    internal class UserViewModel : INotifyPropertyChanged
+    public class UserViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         UserListViewModel Usrlvm;

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MVVMobileSample.Model
 {
-    internal class User
+    public class User
     {
         
         public string Login { get; set; }
